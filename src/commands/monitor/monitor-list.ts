@@ -11,7 +11,6 @@ export default class MonitorListCommand extends SubCommand {
 
     override async run(ctx: CommandContext){
 
-        await ctx.deferReply();
 
         const monitors = await MonitorRepository.getAllMonitors();
 
