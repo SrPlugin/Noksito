@@ -1,4 +1,5 @@
 import { Client, type ParseClient } from "seyfert";
+import { MonitorService } from "./services/monitorService";
 
 async function boostrap() {
 	const client = new Client();
@@ -8,6 +9,8 @@ async function boostrap() {
 			cachePath: "commands.json",
 		}),
 	);
+
+	MonitorService.startChecking(client);
 }
 
 boostrap().catch((error) => {

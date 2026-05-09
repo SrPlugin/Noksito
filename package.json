@@ -8,16 +8,20 @@
 		"start:dev": "bun run --watch src/index.ts",
 		"start:prod": "bun run dist/index.js",
 		"build": "bun build ./src/index.ts --outdir ./dist --target bun --minify",
-		"format": "bunx --bun @biomejs/biome check --write"
+		"format": "bunx --bun @biomejs/biome check --write",
+    "db:push": "bunx --bun drizzle-kit push"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.14",
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"drizzle-kit": "^0.31.10"
 	},
 	"peerDependencies": {
 		"typescript": "^5"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.17.3",
+		"drizzle-orm": "^0.45.2",
 		"seyfert": "^4.3.0"
 	}
 }
